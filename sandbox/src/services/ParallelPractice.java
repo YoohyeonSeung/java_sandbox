@@ -17,10 +17,10 @@ public class ParallelPractice {
 
     public void testParallel() throws ExecutionException, InterruptedException {
 
-        ForkJoinPool assignedPools = new ForkJoinPool(3);
+        ForkJoinPool assignedPools = new ForkJoinPool(3);   // Thread 갯수 할당
 
-        assignedPools.submit(() ->
-            IntStream.range(0, 100).parallel().forEach(index ->{
+        assignedPools.submit(() -> // 할당받은 Thread 로 작업 배정
+            IntStream.range(0, 100).parallel().forEach(index ->{    // index가 0~99까지 있는데 이게 3개의 쓰레드에 할당되어 작업 진행ㄴ
             System.out.println("Selected thread name : "+ Thread.currentThread().getName()+ ", index :" +index+ ", result :"+sum(index));
             try {
                 Thread.sleep(1000);
