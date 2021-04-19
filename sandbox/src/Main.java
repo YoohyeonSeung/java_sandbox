@@ -1,16 +1,12 @@
 import services.ParallelPractice;
 
+import java.util.AbstractMap;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class Main {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-
-        ParallelPractice parallelPractice = new ParallelPractice();
-
-        parallelPractice.testParallel();
-
-
+    public static void main(String[] args) {
 
     }
 
