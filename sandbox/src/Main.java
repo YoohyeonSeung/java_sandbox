@@ -1,10 +1,5 @@
-import services.ParallelPractice;
-
 import java.nio.file.Paths;
-import Util.Util;
-import java.util.AbstractMap;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
+import util.Util;
 
 public class Main {
 
@@ -17,6 +12,10 @@ public class Main {
         String result = Util.readTextFile(filePaths);
 
         System.out.println(result);
+
+
+        Util.writeFile(Paths.get(targetDir, "write.txt").toString(), result);
+
     }
 
 }

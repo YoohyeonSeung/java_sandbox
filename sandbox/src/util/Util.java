@@ -1,10 +1,6 @@
-package Util;
+package util;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.nio.file.Paths;
+import java.io.*;
 
 public class Util {
 
@@ -34,5 +30,27 @@ public class Util {
         }
         return null;
     }
+
+    public static void writeFile(String fileName, String targetString){
+
+        try{
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName));
+
+            bufferedWriter.write(targetString);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+
+
+        }catch (IOException e){
+            System.out.println(String.format("Can not write file : %s", fileName));
+            e.getStackTrace();
+        }
+
+
+
+
+    }
+
+
 
 }
